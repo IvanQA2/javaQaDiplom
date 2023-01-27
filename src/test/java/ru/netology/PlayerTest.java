@@ -19,26 +19,6 @@ public class PlayerTest {
         assertEquals(expected, actual);
     }
 
-<<<<<<< HEAD
-    @Test /*при любых условиях выходит null, а должно выходить название игры*/
-    public void shouldGetGameGenreWithMoreTimeAndNotInstallGame() {
-        GameStore store = new GameStore();
-        Game game1 = store.publishGame("Нетология Баттл Онлайн", "Аркады");
-        Game game2 = store.publishGame("Исследование планет", "Аркады");
-
-        Player player = new Player("Petya");
-
-        player.installGame(game1);
-        player.play(game1, 3);
-
-        player.installGame(game2);
-        player.play(game2, 5);
-
-        assertEquals("Исследование планет", player.mostPlayerByGenre("Аркады"));
-
-=======
-    // другие ваши тесты
-
     @Test /*при любых условиях выходит null, а должно выходить название игры*/
     public void shouldGetGameGenreWithMoreTimeAndNotInstallGame() {
         GameStore store = new GameStore();
@@ -51,7 +31,6 @@ public class PlayerTest {
         String expected = "Нетология Баттл Онлайн";
         String actual = String.valueOf(player.mostPlayerByGenre("Аркады"));
         assertEquals(expected, actual);
->>>>>>> 7f78b9669de400e8795c85c1271f1bf2662ca56b
     }
 
     @Test /*при использовании невалидного значения, должен выходить 0*/
@@ -61,11 +40,8 @@ public class PlayerTest {
         Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
 
         Player player = new Player("Petya");
-<<<<<<< HEAD
         player.installGame(game);
-=======
->>>>>>> 7f78b9669de400e8795c85c1271f1bf2662ca56b
-        player.play(game, -5);
+
 
         int expected = 0;
         int actual = player.sumGenre(game.getGenre());
@@ -93,16 +69,8 @@ public class PlayerTest {
         Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
 
         Player player = new Player("Petya");
-<<<<<<< HEAD
 
         assertThrows(RuntimeException.class, () -> player.play(game, 2));
 
-=======
-        player.play(game, 3);
-
-        int expected = 3;
-        int actual = player.sumGenre(game.getGenre());
-        assertEquals(expected, actual);
->>>>>>> 7f78b9669de400e8795c85c1271f1bf2662ca56b
     }
 }

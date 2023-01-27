@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 public class GameStoreTest {
     GameStore store = new GameStore();
     Game game1 = store.publishGame("Гонки", "онлайн");
@@ -72,6 +74,7 @@ public class GameStoreTest {
 
         assertEquals(expected, actual);
     }
+
     @Test
     public void shouldGetMostSumPlayer() {
 
@@ -86,5 +89,6 @@ public class GameStoreTest {
 
         assertEquals(expected, actual);
     }
+
 
 }
